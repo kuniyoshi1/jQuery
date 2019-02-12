@@ -12,7 +12,7 @@
   <body class="container">
 <!--    div.q-box>h2{クリックで要素サイズ変更}+p.discription{クリックで要素サイズの変更をjquery使って行います}+div.btn-wrapper>div#js-click-btn.btn{ボタン}-->
      
-   <div class="q-box">
+   <div class="q-box" id="test">
      
      <h2>クリックで要素サイズ変更</h2>
      
@@ -130,26 +130,95 @@
      <div class="btn-wrapper">
        <div class="btn js-modal">ボタン</div>
 <!--       div.modal-content>div.modal-close>span{×}^p{モーダル}+div#modal-bg.js-modal-close-->
-       
-    <div class="btn-wrapper modal-wrapper">
-       <div class="modal-content">
-           <div class="modal-close js-modal-close">
-             <span>×</span>
+
+        <div class="btn-wrapper modal-wrapper">
+           <div class="modal-content">
+               <div class="modal-close js-modal-close">
+                 <span>×</span>
+               </div>
+               <p>モーダル</p>
            </div>
-           <p>モーダル</p>
+           <div id="modal-bg" class="js-modal-close"></div>
        </div>
-       <div id="modal-bg" class="js-modal-close"></div>
-   </div>
-     
-     
-     
      </div>
    </div>
    
-  
-      
-    
-    
+   
+<!--   タブメニュー-->
+   
+   <div class="q-box">
+     <h2>タブメニュー</h2>
+     <p class="description">ニュースなどで、ジャンルを分けたいときに使えるよ</p>
+     
+     <div class="margin-left">
+       
+       <ul class="tab-nav">
+         <li><a href="#tab01" class="active">HTML</a></li>
+         <li><a href="#tab02">CSS</a></li>
+         <li><a href="#tab03">Javascript</a></li>
+       </ul>
+       
+       <div class="clearfix"></div>
+       
+       <div class="tab-content">
+         
+         <div id="tab01" class="active">
+              HTMLとは HTMLとは、Hyper Text Markup Language
+              （ハイパーテキスト・マークアップ・ランゲージ）の略で、
+              Webページを作るための最も基本的なマークアップ言語のひとつです。
+              普段、私たちがブラウザで観ているWebページのほとんどが、
+              HTMLで作られています。
+         </div>
+         
+         <div id="tab02">
+              CSS（Cascading Style Sheets、カスケーディング・スタイル・シート）とは、
+              ウェブページのスタイルを指定するための言語です。
+         </div>
+         
+         <div id="tab03">
+              JavaScript（ジャバスクリプト）とは、
+              プログラミング言語のひとつである。
+              Javaと名前が似ているが、全く異なるプログラミング言語である。
+              JavaScriptはプロトタイプベースのオブジェクト指向スクリプト言語であるが、
+              クラスなどのクラスベースに見られる機能も取り込んでいる。
+         </div>
+       </div>
+       
+     </div>
+   </div>
+   
+   
+   <div class="q-box">
+   <h2>スライダー</h2>  
+   <p class="description">
+     ECサイトなどで商品の画像を表示する時に使えるよ
+   </p>
+   
+   <div class="margin-left">
+     
+<!--     div.slider>div.slide-wrapper>div.slide*5-->
+     <div class="slider">
+       <div class="slide-wrapper">
+         <div class="slide"><span class="slide-text">1</span></div>
+         <div class="slide"><span class="slide-text">2</span></div>
+         <div class="slide"><span class="slide-text">3</span></div>
+         <div class="slide"><span class="slide-text">4</span></div>
+         <div class="slide"><span class="slide-text">5</span></div>
+       </div>
+       <span class="prev-slider">＜</span>
+       <span class="next-slider">＞</span>
+     </div>
+     
+   </div>
+     
+   
+   
+   
+   
+   </div>
+   
+   
+   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
     <script src="js/app.js"></script>

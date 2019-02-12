@@ -114,7 +114,7 @@ $(function(){
   //スムーズスクロール
   $('.js-scroll').on('click',function(){
     
-    $('body,html').animate({ scrollTop:0 }, 500);
+    $('html,body').animate({ scrollTop: $("#test").offset() }, 500);
     
   });
 
@@ -136,13 +136,30 @@ $(function(){
   });
   
   
+//  タブメニュー作る
+  
+
+  // タブメニュー
+  $('.tab-nav a').on('click', function() {
+    if ($(this).hasClass('active')) {
+      return false;
+    }
+
+    $('.tab-nav a').removeClass('active');
+    $(this).addClass('active');
+
+    $('.tab-content > div').removeClass('active');
+    $('.tab-content > div').filter(this.hash).addClass('active');
+
+  });
+
   
   
-  
-  
-  
-  
-  
+  //スライダー
+  let slideWidth = $('.slide').outerWidth();
+  let slideNum = $('.slide').length;
+  let slideWrapperWidth = slideWidth * slideNum;
+  let currentSlide = 0;
   
   
   

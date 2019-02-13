@@ -114,7 +114,8 @@ $(function(){
   //スムーズスクロール
   $('.js-scroll').on('click',function(){
     
-    $('html,body').animate({ scrollTop: $("#test").offset() }, 500);
+//    任意の場所へ行く方法
+    $('html,body').animate({ scrollTop: $("#test").offset().top }, 500);
     
   });
 
@@ -156,10 +157,69 @@ $(function(){
   
   
   //スライダー
+  //クラスslideの要素の幅だよ(marginは含まない)
   let slideWidth = $('.slide').outerWidth();
+  console.log(slideWidth);
+  
+  //slideクラスがついているdivの数(5)
   let slideNum = $('.slide').length;
+  console.log(slideNum);
+  
   let slideWrapperWidth = slideWidth * slideNum;
+  console.log(slideWrapperWidth);
+  
   let currentSlide = 0;
+  
+  $('slide-wrapper').css('width', slideWrapperWidth);
+  
+  
+  //次へ
+  $('.next-slider').on('click',function(){
+    //最後のスライドだった場合
+        console.log('slideNum'+slideNum);
+    if(currentSlide >= slideNum -1){
+        return false;
+       }
+    
+    
+    currentSlide++;
+    console.log(currentSlide);
+    
+    slide();
+  });
+  
+//  前へ
+  $('.prev-slider').on('click',function(){
+    
+    //最初のスライドだった場合
+    if(currentSlide <= 0){
+        return false;
+       }
+    
+    currentSlide--;
+    
+    slide();
+    
+  });
+  
+  
+function slide() {
+    //押せば強制スタートの為にstop()
+    $('.slide-wrapper').stop().animate({
+      left: currentSlide * -slideWidth
+    },1000);
+  console.log('左に'+ currentSlide * -slideWidth);
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
